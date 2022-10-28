@@ -1,5 +1,5 @@
 
-  import Head from 'next/head';
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
@@ -27,7 +27,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import SwiperCore, { Autoplay } from 'swiper';
-import { data } from 'autoprefixer';
 
 SwiperCore.use([Autoplay]);
 
@@ -279,6 +278,10 @@ const WrapperNavigationBtn = styled.div`
   text-align: center;
   position: relative;
   white-space: nowrap;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 `;
 
 const MiddleText = styled.div`
@@ -405,14 +408,6 @@ const PlayBtn = styled.div`
 `;
 
 export default function Home({ dataCMS }) {
-  const { displayWidth } = useWindowDimensions();
-
-  const [width, setWidth] = useState();
-
-  useEffect(() => {
-    setWidth(displayWidth)
-  },[displayWidth])
-
   const takeRegis = () => {
     window.location.href = 'https://ambkub168.autosv.cloud/user/register';
   }
@@ -456,14 +451,14 @@ export default function Home({ dataCMS }) {
           <div>
             <WrapperBtn className='flex'>
               <BlueBtn onClick={takeRegis}>
-                <IconContext.Provider value={{ size: '1vw'}}>
-                  <FaUser className='mr-1 md:hidden'/>
+                <IconContext.Provider value={{ size: '10px'}}>
+                  <FaUser className='mr-1 icon-hidden'/>
                 </IconContext.Provider>
                 <span>สมัครสมาชิก</span>
               </BlueBtn>
               <RedBtn onClick={takeLogin}>
                 <IconContext.Provider value={{ size: '1vw' }}>
-                  <FaSignInAlt className='mr-1 md:hidden'/>
+                  <FaSignInAlt className='mr-1 icon-hidden'/>
                 </IconContext.Provider>
                 <span>เข้าสู่ระบบ</span>
               </RedBtn>
@@ -473,19 +468,19 @@ export default function Home({ dataCMS }) {
         <WrapperTools className='mt-2'>
           <div className='grid grid-cols-3 gap-1'>
             <BlankBtn>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaHome className='mr-1'/>
               </IconContext.Provider>
               <span>หน้าแรก</span>
             </BlankBtn>
             <BlankBtn onClick={takeLogin}>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaGift className='mr-1'/>
               </IconContext.Provider>
               <span>โปรโมชั่น</span>
             </BlankBtn>
             <BlankBtn onClick={takeLogin}>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaTrophy className='mr-1'/>
               </IconContext.Provider>
               <span>รางวัล</span>
@@ -493,19 +488,19 @@ export default function Home({ dataCMS }) {
           </div>
           <div className='grid grid-cols-3 gap-1'>
             <BlankBtn onClick={takeLogin}>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaUsers className='mr-1'/>
               </IconContext.Provider>
               <span>แนะนำเพื่อน</span>
             </BlankBtn>
             <BlankBtn onClick={takeLogin}>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaPlay className='mr-1'/>
               </IconContext.Provider>
               <span>แทงหวย</span>
             </BlankBtn>
             <BlankBtn onClick={lineConnect}>
-              <IconContext.Provider value={{ size: width >= 768 ? '10px' : '1vw' }}>
+              <IconContext.Provider value={{ size: '10px' }}>
                 <FaLine className='mr-1'/>
               </IconContext.Provider>
               <span>ติดต่อเรา</span>
@@ -559,14 +554,14 @@ export default function Home({ dataCMS }) {
               </WelcomeText>
               <WrapperBtn className='flex'>
                 <BlueBtn onClick={takeRegis}>
-                  <IconContext.Provider value={{ size: '1vw'}}>
-                    <FaUser className='mr-1 md:hidden'/>
+                  <IconContext.Provider value={{ size: '10px'}}>
+                    <FaUser className='mr-1 icon-hidden'/>
                   </IconContext.Provider>
                   <span>สมัครสมาชิก</span>
                 </BlueBtn>
                 <RedBtn onClick={takeLogin}>
-                  <IconContext.Provider value={{ size: '1vw' }}>
-                    <FaSignInAlt className='mr-1 md:hidden'/>
+                  <IconContext.Provider value={{ size: '10px' }}>
+                    <FaSignInAlt className='mr-1 icon-hidden'/>
                   </IconContext.Provider>
                   <span>เข้าสู่ระบบ</span>
                 </RedBtn>

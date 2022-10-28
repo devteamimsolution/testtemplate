@@ -38,3 +38,10 @@ span {
 button {
   color: #fff;
 }
+
+
+@media screen and (max-width: 768px) {
+  .icon-hidden {
+    display: none;
+  }
+}
