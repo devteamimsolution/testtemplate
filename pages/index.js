@@ -197,6 +197,7 @@ const WrapperTools = styled.div`
 `;
 
 const BlankBtn = styled.button`
+  white-space: nowrap;
   background-color: transparent;
   border: transparent;
   font-size: 1.2vw;
@@ -277,6 +278,7 @@ const WrapperNavigationBtn = styled.div`
   cursor: pointer;
   text-align: center;
   position: relative;
+  white-space: nowrap;
 `;
 
 const MiddleText = styled.div`
