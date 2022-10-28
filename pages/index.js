@@ -377,6 +377,7 @@ const CopyRight = styled.div`
 `;
 
 const Navigator = styled.div`
+  z-index: 9999;
   position: sticky;
   bottom: 0;
   background-color: #181818;
